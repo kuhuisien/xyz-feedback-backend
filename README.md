@@ -11,10 +11,11 @@ Accessing the deployed API endpoints [here](https://xyz-feedback-app-1.herokuapp
 * Open the project with any java IDE (e.g. Eclipse).
 * Right Click FeedbackportalServiceRestApplication.java and choose 'Run as java application'.
 
-### Deploy
+### Deploying
 
 * This project is deployed with Heroku with ClearDB MySQL Add-on.
-* Log in to Heroku 
+
+* Log in to Heroku.
 
 ```bash
 heroku login
