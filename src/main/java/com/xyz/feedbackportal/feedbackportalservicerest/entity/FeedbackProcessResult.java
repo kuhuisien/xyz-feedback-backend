@@ -1,5 +1,6 @@
 package com.xyz.feedbackportal.feedbackportalservicerest.entity;
 
+// Response entity structure returned by external handling API
 public class FeedbackProcessResult {
 	
 	private String sentiment;

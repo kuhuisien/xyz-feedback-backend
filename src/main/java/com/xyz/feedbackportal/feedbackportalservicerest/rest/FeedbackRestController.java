@@ -52,22 +52,12 @@ public class FeedbackRestController {
 		feedbackService.save(theFeedback);
 		
 		
-		// apply filter so that not all fields of 'feedback' class is returned
-		/*
-		SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter
-				.filterOutAllExcept("id", "name", "email", "contactNumber", 
-						"agencyName", "feedback", "createdAt");
-		FilterProvider filters = new SimpleFilterProvider().addFilter("feedbackPostFilter", filter);
-		MappingJacksonValue mapping = new MappingJacksonValue(theFeedback);
-		mapping.setFilters(filters); */
-		
+		// integrate with external API
 		Mono<FeedbackProcessResult> feedbackProcessResult = 
 				feedbackService.processFeedback(theFeedback.getFeedback());
-	
 		
 		feedbackProcessResult
 	      .doOnSuccess(s -> {
-	    	  System.out.println(s.getSentiment());
 	    	  String sentiment = s.getSentiment();
 	    	  if (sentiment.equals("negative")) {
 	    		  theFeedback.setProcessingResult(FeedbackProcesssingResult.Rejected);

@@ -32,19 +32,4 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 		
 		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
 	}
-	
-	/*
-	@ExceptionHandler
-	public ResponseEntity<ErrorResponse> handleException(Exception exc) {
-		
-		// create a StudentErrorResponse
-		ErrorResponse error = new ErrorResponse();
-		
-		error.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-		error.setMessage(exc.getMessage());
-		error.setTimeStamp(System.currentTimeMillis());
-		
-		// return ResponseEntity		
-		return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
-	} */
 }
