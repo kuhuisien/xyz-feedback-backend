@@ -16,14 +16,10 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
-
-
-//@JsonFilter("feedbackPostFilter")
 @Entity
 @Table(name="feedback")
 public class Feedback {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -149,5 +145,12 @@ public class Feedback {
 
 	public void setProcessingResult(FeedbackProcesssingResult processingResult) {
 		this.processingResult = processingResult;
+	}
+	
+	@Override
+	public String toString() {
+		return "Feedback [id=" + id + ", name=" + name + ", email=" + email + ", contactNumber=" + contactNumber
+				+ ", agencyName=" + agencyName + ", feedback=" + feedback + ", createdAt=" + createdAt + ", updatedAt="
+				+ updatedAt + ", processingResult=" + processingResult + "]";
 	}
 }

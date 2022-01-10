@@ -67,7 +67,7 @@ public class FeedbackRestController {
 	    	  feedbackService.save(theFeedback);
 	    	  })
 	      .doOnError(e -> System.out.println(e.getMessage()))
-	      .subscribe(i -> System.out.println("Result: " + i)); 
+	      .subscribe(i -> System.out.println("Processed Result: " + i)); 
 		
 		return theFeedback;
 	} 
